@@ -1,5 +1,22 @@
 {% extends 'all-temps/base.html' %}
 {% block content  %}
 {{block.super}}
-<h1>Welcome to picha fulani</h1>
+
+ 
+{% for photo in photos  %}
+ 
+<h2>{{ photo.image_name }}</h2>
+ <p>{{ photo.description }}</p>
+ <p class="badge"> {{photo.location}} </p>
+  
+ {% if photo.image %}
+
+
+ <img src="{{ photo.image.url }}" class="img-responsive" height="420" width="420" alt="image">
+
+  {% endif %}
+{% endfor %}
+
+
+
 {% endblock %}
