@@ -30,11 +30,9 @@ class Category(models.Model):
 
 
 class Gallery(models.Model):
-  image = models.ImageField(upload_to='gallery/', null=True, blank=True,width_field="width_field", height_field="height_field")
-  width_field = models.IntegerField(default=0)
-  height_field = models.IntegerField(default=0)
+  image = models.ImageField(upload_to='gallery/', null=True, blank=True)
   image_name = models.CharField(max_length=25)
-  description = models.TextField(max_length=100)
+  description = models.TextField(max_length=300)
   location = models.ForeignKey(Location)
   category = models.ForeignKey(Category)
 
