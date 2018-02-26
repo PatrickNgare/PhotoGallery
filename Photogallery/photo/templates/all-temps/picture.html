@@ -3,12 +3,12 @@
 {% block content %}
 {{bock.super}}
 
-
-  <!--Card-->
+<div class="container">
+  <div class="jumbtron">
   
   <div class="card card-cascade wider reverse my-4">
 
-        <!--Card image-->
+        
         <h4 class="card-title"><strong>{{ picture.image_name }}</strong></h4>
         <div class="view overlay">
                 {% if picture.image %}
@@ -25,11 +25,14 @@
         <div class="card-body text-center">
             <!--Title-->
            
-           <h5 class="indigo-text">location<strong> {{ picture.location }}</strong></h5>
-            <p class="card-text">Category: {{ picture.category }}</p>
+           
+           <span class="badge badge-success">location: {{ picture.location }}</span>
+           <span class="badge badge-success">Category: {{ picture.category }}</span>
+            
+
 
             <p class="card-text">{{ picture.description }}</p>
-
+             
             <!--Linkedin-->
             <a class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a>
             <!--Twitter-->
@@ -42,7 +45,8 @@
 
     </div>
   
-
+</div>
+</div>
 
 
 {% endblock%}
