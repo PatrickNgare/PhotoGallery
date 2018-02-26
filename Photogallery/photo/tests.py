@@ -15,3 +15,21 @@ from . models import Gallery,Category,Image
         place = Location.objects.all()
         self.assertTrue(len(place) > 0)     
 
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.test = Category(category="Nature")
+
+    def test_instance(self):
+        self.asserTrue(isinstance(self.test, Gallery))
+
+    def test_saving_category(self):
+        self.test.save_category()
+        images = Category.objects.all()
+        self.assertTrue(len(images) > 0)
+
+    def test_deleting_category(self):
+        self.test = Category(category="foodie")
+        self.test.save_category()
+        self.test.delete_locations()
+        place = Category.objects.all()
+        self.assertTrue(len(places)
