@@ -22,11 +22,9 @@ class Category(models.Model):
 
   def save_category(self):
       self.save()
+      
 
-  @classmethod
-  def search_by_category(cls, search_category):
-      category = cls.objects.filter(category__icontains=search_category)
-      return category
+  
 
 
 class Gallery(models.Model):
@@ -61,3 +59,8 @@ class Gallery(models.Model):
 
   def search_image(category):
       pass
+
+  @classmethod
+  def search_by_category(cls, search_term):
+      category = cls.objects.filter(category__category__icontains=search_term)
+      return category    
