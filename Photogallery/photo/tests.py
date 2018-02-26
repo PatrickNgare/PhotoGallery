@@ -47,3 +47,9 @@ class GalleryTestClass(TestCase):
         self.test_image = Gallery(image="image",image_url="Imageurl",image_name="patelimg",description="image from nairobi",location=self.test_place)  
         self.test_image.save()
         self.test_image.category.add(self.test_category)
+
+
+    def test_saving_image(self):
+        self.test_image.save_image()
+        images = Gallery.objects.all()
+        self.assertTrue(len(images) > 0)
