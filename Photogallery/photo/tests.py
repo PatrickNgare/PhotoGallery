@@ -40,5 +40,8 @@ class GalleryTestClass(TestCase):
         self.test_location = Location(location="Nakuru")
         self.test_location.save()
        
-        self.test_category = Category(category="people")
-        self.test_category.save()        
+        self.test_category = Category(category="Nature")
+        self.test_category.save()      
+
+        
+        self.test_image = Gallery(image="image",image_url="Imageurl",image_name="patelimg",description="image from nairobi",location=self.test_place)  
