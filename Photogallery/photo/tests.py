@@ -33,3 +33,12 @@ class CategoryTestClass(TestCase):
         self.test.delete_locations()
         place = Category.objects.all()
         self.assertTrue(len(places)
+
+class GalleryTestClass(TestCase):
+    def setUp(self):
+      
+        self.test_location = Location(location="Nakuru")
+        self.test_location.save()
+       
+        self.test_category = Category(category="people")
+        self.test_category.save()        
